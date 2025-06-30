@@ -18,6 +18,9 @@ This project demonstrates a war field surveillance robot designed for remote mon
 - IoT device control
 - Integration of hardware and software modules
 ---
+## 🔌 Circuit Diagram
+
+![Circuit Diagram](docs/circuit_diagram.jpg)
 
 ## 📁 Project Structure
 war-field-robot/
