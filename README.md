@@ -1,2 +1,35 @@
-# war-field-robot-
-This project demonstrates a war field surveillance robot controlled via Android (Bluetooth HC-05) using Arduino Uno and motor driver modules. Includes Python-based backend script to simulate serial communication, showcasing basic backend control capabilities.
+# War Field Surveillance Robot
+
+This project demonstrates a war field surveillance robot designed for remote monitoring and control using Android devices via Bluetooth (HC-05). Built on Arduino Uno and motor driver modules, the robot can navigate and perform basic movements in a remote environment.
+
+## 🔧 Key Features
+
+- **Arduino Uno-based control system**
+- **Bluetooth (HC-05) module** for wireless communication with Android
+- **Motor driver (L293D)** to control movement of DC motors
+- **Night vision camera support** (IP-based) for real-time surveillance
+- **Python backend script** to simulate/control communication via serial port
+
+## 🧠 Skills Demonstrated
+
+- Embedded systems programming (Arduino)
+- Serial communication using Python (`pyserial`)
+- Backend logic for hardware interaction
+- IoT device control
+- Integration of hardware and software modules
+---
+
+## 📁 Project Structure
+war-field-robot/
+│
+├── backend/
+│ └── control.py # Python script for Bluetooth control
+│
+├── hardware/
+│ └── war_robot.ino # Arduino sketch for robot movement
+│
+├── docs/
+│ └── circuit_diagram.png # Circuit layout image (optional)
+│
+├── requirements.txt # Python dependencies
+└── README.md # Project overview
