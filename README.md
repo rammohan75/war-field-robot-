@@ -26,13 +26,11 @@ This project demonstrates a war field surveillance robot designed for remote mon
 war-field-robot/
 │
 ├── backend/
-│ └── control.py # Python script for Bluetooth control
+│ └── control.py 
 │
 ├── hardware/
-│ └── war_robot.ino # Arduino sketch for robot movement
+│ └── war_robot.ino 
 │
 ├── docs/
-│ └── circuit_diagram.png # Circuit layout image (optional)
-│
-├── requirements.txt # Python dependencies
-└── README.md # Project overview
+│ └── circuit_diagram.jpg
+
