@@ -1,21 +1,32 @@
 import serial
 import time
 
-# Replace with the correct serial port name for your system
-port = 'COM3'  # For Windows
-# port = '/dev/ttyUSB0'  # For Linux
-
+# Replace with your correct COM port (e.g., 'COM5' on Windows or '/dev/ttyUSB0' on Linux)
+bluetooth_port = 'COM5'
 baud_rate = 9600
-arduino = serial.Serial(port, baud_rate, timeout=1)
-time.sleep(2)  # Wait for connection
 
-def send_command(cmd):
-    arduino.write(cmd.encode())
-    print(f"Sent: {cmd}")
+try:
+    bluetooth = serial.Serial(bluetooth_port, baud_rate)
+    print(f"Connected to {bluetooth_port} at {baud_rate} baud.")
 
-while True:
-    cmd = input("Enter command (F/B/L/R/S for stop): ").strip().upper()
-    if cmd in ['F', 'B', 'L', 'R', 'S']:
-        send_command(cmd)
-    else:
-        print("Invalid command. Use F/B/L/R/S.")
+    while True:
+        command = input("Enter command (f=forward, b=back, l=left, r=right, s=stop, q=quit): ").lower()
+        if command == 'q':
+            print("Exiting...")
+            break
+        elif command in ['f', 'b', 'l', 'r', 's']:
+            bluetooth.write(command.encode())
+            print(f"Sent: {command}")
+        else:
+            print("Invalid command.")
+
+except serial.SerialException:
+    print("Could not open port. Check COM port and wiring.")
+
+except KeyboardInterrupt:
+    print("Program interrupted.")
+
+finally:
+    if 'bluetooth' in locals():
+        bluetooth.close()
+        print("Serial port closed.")
